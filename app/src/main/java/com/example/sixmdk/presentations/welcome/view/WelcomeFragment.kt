@@ -1,4 +1,4 @@
-package com.example.sixmdk.presentations.welcome
+package com.example.sixmdk.presentations.welcome.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
+import androidx.fragment.app.viewModels
 import com.cryptoproxy.coinmining.common.utils.views.doOnApplyWindowInsets
 import com.example.sixmdk.data.registration.datasource.RegistrationLocalDataSource
+import com.example.sixmdk.data.welcome.datasource.WelcomeLocalDataSource
 import com.example.sixmdk.databinding.FragmentWelcomeBinding
+import com.example.sixmdk.presentations.welcome.viewmodel.ShowRouteViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -17,6 +20,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class WelcomeFragment : Fragment() {
     private lateinit var binding: FragmentWelcomeBinding
+    private val model: ShowRouteViewModel by viewModels()
 
     @Inject
     lateinit var registrationLocalDataSource: RegistrationLocalDataSource
@@ -38,9 +42,11 @@ class WelcomeFragment : Fragment() {
             )
             insets
         }
-        val userData = registrationLocalDataSource.getUser()
-        if(userData != null) binding.nameUser.text = userData.name
-
+        binding.nameUser.text = registrationLocalDataSource.getName()
+        if(model.getStartPoint() != null)
+            binding.fromRouteInput.text = model.getStartPoint()
+        if(model.getEndPoint() != null)
+            binding.toRouteInput.text = model.getEndPoint()
 
     }
 }

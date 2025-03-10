@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentations.welcome.WelcomeFragment"
+    tools:context=".presentations.welcome.view.WelcomeFragment"
     android:background="@color/black"
     tools:ignore="MissingConstraints">
     <TextView
@@ -71,7 +71,7 @@
         app:layout_constraintBottom_toBottomOf="@id/from_route_point"
         app:layout_constraintStart_toEndOf="@id/from_route_point"
         android:layout_marginStart="@dimen/_22dp" />
-    <com.google.android.material.textfield.TextInputEditText
+    <TextView
         android:id="@+id/from_route_input"
         android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
         app:layout_constraintBottom_toBottomOf="@id/to_route_point"
         app:layout_constraintStart_toEndOf="@id/to_route_point"
         android:layout_marginStart="@dimen/_22dp" />
-    <com.google.android.material.textfield.TextInputEditText
+    <TextView
         android:id="@+id/to_route_input"
         android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
