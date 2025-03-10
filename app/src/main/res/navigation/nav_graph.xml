@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/registrationFragment">
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.sixmdk.presentations.registration.view.RegistrationFragment"
+        tools:layout="@layout/fragment_registration"/>
+    <fragment
+        android:id="@+id/orderTaxiFragment"
+        android:name="com.example.sixmdk.presentations.main.OrderTaxiFragment"
+        tools:layout="@layout/fragment_order_taxi"/>
+
+    <action android:id="@+id/startMainFragment"
+        app:destination="@id/orderTaxiFragment"
+        app:enterAnim="@anim/fade_in"
+        app:popEnterAnim="@anim/fade_in"
+        app:exitAnim="@anim/fade_out"
+        app:popExitAnim="@anim/fade_out"/>
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.sixmdk.presentations.welcome.WelcomeFragment"
+        tools:layout="@layout/fragment_welcome"/>
+    <action android:id="@+id/startWelcomeFragment"
+        app:destination="@id/welcomeFragment"
+        app:enterAnim="@anim/fade_in"
+        app:popEnterAnim="@anim/fade_in"
+        app:exitAnim="@anim/fade_out"
+        app:popExitAnim="@anim/fade_out"/>
+</navigation>
