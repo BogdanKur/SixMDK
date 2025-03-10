@@ -46,7 +46,8 @@ class WelcomeFragment : Fragment() {
             )
             insets
         }
-        binding.welcomeTitle.text = getString(R.string.welcome) + " " + registrationLocalDataSource.getName() + " зайка!!"
+        binding.welcomeTitle.text = getString(R.string.welcome) + " " + registrationLocalDataSource.getName() +
+                " " + registrationLocalDataSource.getSurname() + "!"
         if (model.getStartPoint() != null)
             binding.startInput.text = getString(R.string.start) + " " + model.getStartPoint()
         if (model.getEndPoint() != null)

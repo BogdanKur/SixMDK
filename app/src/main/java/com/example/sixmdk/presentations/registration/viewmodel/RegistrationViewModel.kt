@@ -10,7 +10,8 @@ import javax.inject.Inject
 class RegistrationViewModel @Inject constructor(
     private val registrationLocalDataSource: RegistrationLocalDataSource
 ): ViewModel() {
-    fun signup(user: String) {
-        registrationLocalDataSource.setName(user)
+    fun signup(name: String, surname: String) {
+        registrationLocalDataSource.setName(name)
+        registrationLocalDataSource.setSurname(surname)
     }
 }

@@ -7,6 +7,10 @@ import javax.inject.Inject
 interface RegistrationLocalDataSource {
     fun getName(): String?
     fun setName(user: String)
+
+    fun getSurname(): String?
+    fun setSurname(user: String)
+
     fun isAuth(): Boolean
 }
 class RegistrationLocalDataSourceImpl @Inject constructor(): RegistrationLocalDataSource {
@@ -20,6 +24,12 @@ class RegistrationLocalDataSourceImpl @Inject constructor(): RegistrationLocalDa
 
     override fun setName(user: String) {
         storage.encode("user", user)
+    }
+
+    override fun getSurname(): String? = storage.decodeString("surname", null)
+
+    override fun setSurname(user: String) {
+        storage.encode("surname", user)
     }
 
     override fun isAuth(): Boolean {

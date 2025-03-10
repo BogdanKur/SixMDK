@@ -47,7 +47,7 @@ class RegistrationFragment : Fragment() {
             if(binding.nameInput.text.toString() != "" &&
                 binding.surnameInput.text.toString() != "" &&
                 binding.numberInput.text.toString() != "") {
-                model.signup(binding.nameInput.text.toString())
+                model.signup(binding.nameInput.text.toString(), binding.surnameInput.text.toString())
 
                 findNavController().navigate(NavGraphDirections.startWelcomeFragment())
             } else {
