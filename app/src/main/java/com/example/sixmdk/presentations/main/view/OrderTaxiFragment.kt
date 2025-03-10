@@ -1,4 +1,4 @@
-package com.example.sixmdk.presentations.main
+package com.example.sixmdk.presentations.main.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,17 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.cryptoproxy.coinmining.common.utils.views.doOnApplyWindowInsets
+import com.example.sixmdk.NavGraphDirections
 import com.example.sixmdk.databinding.FragmentOrderTaxiBinding
+import com.example.sixmdk.presentations.main.viewmodel.ChooseViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class OrderTaxiFragment : Fragment() {
     private lateinit var binding: FragmentOrderTaxiBinding
-
+    private val model: ChooseViewModel by viewModels()
+    private var car = ""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentOrderTaxiBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -31,6 +38,27 @@ class OrderTaxiFragment : Fragment() {
             )
             insets
         }
+        binding.infinity.setOnClickListener {
+            car = "Infiniti fx 37s"
+        }
+        binding.mercedes.setOnClickListener {
+            car = "Mercedes  GLE"
+        }
+        binding.bmw.setOnClickListener {
+            car = "BMW 840i"
+        }
+        binding.audi.setOnClickListener {
+            car = "Audi R8"
+        }
+
+
+        binding.chooseBtn.setOnClickListener {
+            model.setStartPoint(binding.fromRouteInput.text.toString())
+            model.setEndPoint(binding.toRouteInput.text.toString())
+            model.setCar(car)
+            findNavController().navigate(NavGraphDirections.startWelcomeFragment())
+        }
+
     }
 
 }

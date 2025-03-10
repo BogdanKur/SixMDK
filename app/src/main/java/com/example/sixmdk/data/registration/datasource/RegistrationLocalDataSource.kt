@@ -5,8 +5,8 @@ import com.tencent.mmkv.MMKV
 import javax.inject.Inject
 
 interface RegistrationLocalDataSource {
-    fun getUser(): UserModel?
-    fun setUser(user: UserModel)
+    fun getName(): String?
+    fun setName(user: String)
     fun isAuth(): Boolean
 }
 class RegistrationLocalDataSourceImpl @Inject constructor(): RegistrationLocalDataSource {
@@ -16,14 +16,14 @@ class RegistrationLocalDataSourceImpl @Inject constructor(): RegistrationLocalDa
             MMKV.MULTI_PROCESS_MODE
         )
     }
-    override fun getUser(): UserModel? = storage.decodeParcelable("user", null)
+    override fun getName(): String? = storage.decodeString("user", null)
 
-    override fun setUser(user: UserModel) {
+    override fun setName(user: String) {
         storage.encode("user", user)
     }
 
     override fun isAuth(): Boolean {
-        return getUser()!= null
+        return getName()!= null
     }
 
 }

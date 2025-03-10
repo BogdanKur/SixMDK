@@ -11,7 +11,7 @@
         tools:layout="@layout/fragment_registration"/>
     <fragment
         android:id="@+id/orderTaxiFragment"
-        android:name="com.example.sixmdk.presentations.main.OrderTaxiFragment"
+        android:name="com.example.sixmdk.presentations.main.view.OrderTaxiFragment"
         tools:layout="@layout/fragment_order_taxi"/>
 
     <action android:id="@+id/startMainFragment"
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/welcomeFragment"
-        android:name="com.example.sixmdk.presentations.welcome.WelcomeFragment"
+        android:name="com.example.sixmdk.presentations.welcome.view.WelcomeFragment"
         tools:layout="@layout/fragment_welcome"/>
     <action android:id="@+id/startWelcomeFragment"
         app:destination="@id/welcomeFragment"

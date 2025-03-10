@@ -6,117 +6,109 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentations.registration.view.RegistrationFragment"
     tools:ignore="MissingConstraints"
-    android:background="@color/black">
-
-    <TextView
-        android:id="@+id/registration_title"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_35sp"
+    android:background="@drawable/background">
+    <ImageView
+        android:id="@+id/welcome_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/registration"
+        android:src="@drawable/logo_elite"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/_150dp"
-        android:paddingHorizontal="@dimen/_6dp"/>
-    <View
-        android:layout_width="@dimen/_0dp"
-        android:layout_height="2dp"
-        android:background="#FEC400"
-        app:layout_constraintStart_toStartOf="@id/registration_title"
-        app:layout_constraintEnd_toEndOf="@id/registration_title"
-        app:layout_constraintTop_toBottomOf="@id/registration_title" />
+        android:layout_marginTop="@dimen/_15dp"/>
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/name"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_16sp"
-        app:layout_constraintStart_toStartOf="@id/registration_title"
-        app:layout_constraintTop_toBottomOf="@id/registration_title"
-        android:layout_marginTop="@dimen/_36dp"/>
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/name_input"
         android:layout_width="@dimen/_0dp"
         android:layout_height="@dimen/_40dp"
         android:textColor="@color/white"
         android:textSize="@dimen/_18sp"
-        android:background="@drawable/edit_text_background"
-        app:layout_constraintStart_toStartOf="@id/name"
+        android:hint="@string/name"
+        android:textColorHint="@color/white"
+        android:paddingStart="@dimen/_5dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        android:layout_marginTop="@dimen/_10dp"
-        android:layout_marginEnd="@dimen/_85dp"/>
+        app:layout_constraintTop_toBottomOf="@id/welcome_icon"
+        android:layout_marginTop="@dimen/_20dp"
+        android:layout_marginEnd="@dimen/_25dp"
+        android:layout_marginStart="@dimen/_25dp"/>
+    <View
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="2dp"
+        android:background="@drawable/line_background"
+        app:layout_constraintStart_toStartOf="@id/name_input"
+        app:layout_constraintEnd_toEndOf="@id/name_input"
+        app:layout_constraintTop_toBottomOf="@id/name_input" />
 
-    <TextView
-        android:id="@+id/surname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/surname"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_16sp"
-        app:layout_constraintStart_toStartOf="@id/registration_title"
-        app:layout_constraintTop_toBottomOf="@id/name_input"
-        android:layout_marginTop="@dimen/_45dp"/>
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/surname_input"
         android:layout_width="@dimen/_0dp"
         android:layout_height="@dimen/_40dp"
         android:textColor="@color/white"
         android:textSize="@dimen/_18sp"
-        android:background="@drawable/edit_text_background"
-        app:layout_constraintStart_toStartOf="@id/surname"
+        android:hint="@string/surname"
+        android:textColorHint="@color/white"
+        android:paddingStart="@dimen/_5dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/surname"
-        android:layout_marginTop="@dimen/_10dp"
-        android:layout_marginEnd="@dimen/_85dp"/>
+        app:layout_constraintTop_toBottomOf="@id/name_input"
+        android:layout_marginTop="@dimen/_55dp"
+        android:layout_marginEnd="@dimen/_25dp"
+        android:layout_marginStart="@dimen/_25dp"/>
+    <View
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="2dp"
+        android:background="@drawable/line_background"
+        app:layout_constraintStart_toStartOf="@id/name_input"
+        app:layout_constraintEnd_toEndOf="@id/name_input"
+        app:layout_constraintTop_toBottomOf="@id/surname_input" />
 
-    <TextView
-        android:id="@+id/number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/number"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_16sp"
-        app:layout_constraintStart_toStartOf="@id/registration_title"
-        app:layout_constraintTop_toBottomOf="@id/surname_input"
-        android:layout_marginTop="@dimen/_45dp"/>
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/number_input"
         android:layout_width="@dimen/_0dp"
         android:layout_height="@dimen/_40dp"
         android:textColor="@color/white"
         android:textSize="@dimen/_18sp"
-        android:background="@drawable/edit_text_background"
-        app:layout_constraintStart_toStartOf="@id/number"
+        android:hint="@string/number"
+        android:textColorHint="@color/white"
+        android:paddingStart="@dimen/_5dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/number"
-        android:layout_marginTop="@dimen/_10dp"
-        android:layout_marginEnd="@dimen/_85dp"/>
+        app:layout_constraintTop_toBottomOf="@id/surname_input"
+        android:layout_marginTop="@dimen/_55dp"
+        android:layout_marginEnd="@dimen/_25dp"
+        android:layout_marginStart="@dimen/_25dp"/>
+    <View
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="2dp"
+        android:background="@drawable/line_background"
+        app:layout_constraintStart_toStartOf="@id/name_input"
+        app:layout_constraintEnd_toEndOf="@id/name_input"
+        app:layout_constraintTop_toBottomOf="@id/number_input" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/signup_btn"
         android:layout_width="@dimen/_0dp"
-        android:layout_height="@dimen/_35dp"
+        android:layout_height="@dimen/_45dp"
         app:layout_constraintTop_toBottomOf="@id/number_input"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="@dimen/_125dp"
-        android:layout_marginTop="@dimen/_45dp">
+        android:layout_marginHorizontal="@dimen/_95dp"
+        android:layout_marginTop="@dimen/_55dp">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/enter_btn"/>
+            android:background="@drawable/line_background"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Войти"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_17sp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_24sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
