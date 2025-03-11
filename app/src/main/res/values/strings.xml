@@ -2,9 +2,9 @@
     <string name="app_name">SixMDK</string>
     <string name="welcome">Добро пожаловать,</string>
     <string name="registration">Регистрация</string>
-    <string name="name">Имя</string>
-    <string name="surname">Фамилия</string>
-    <string name="number">Номер телефона</string>
+    <string name="name">Введите имя</string>
+    <string name="surname">Введите фамилию</string>
+    <string name="number">Введите номер</string>
     <string name="route">Маршрут</string>
     <string name="from">Откуда</string>
     <string name="to">Куда</string>
@@ -13,9 +13,10 @@
     <string name="kids">Kids</string>
     <string name="delivery">Delivery</string>
     <string name="order">Заказать</string>
-    <string name="call_taxi">Вызвать такси</string>
-    <string name="car">Машина:</string>
+    <string name="call_taxi">Изменить данные</string>
+    <string name="car">Класс:</string>
     <string name="end">Конец:</string>
     <string name="start">Начало:</string>
     <string name="choose">Выбрать</string>
+    <string name="econom">Эконом</string>
 </resources>

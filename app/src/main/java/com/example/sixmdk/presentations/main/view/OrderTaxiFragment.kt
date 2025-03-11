@@ -38,21 +38,18 @@ class OrderTaxiFragment : Fragment() {
             )
             insets
         }
-        binding.infinity.setOnClickListener {
-            car = "Infiniti fx 37s"
+        binding.economLayout.setOnClickListener {
+            car = "Эконом"
         }
-        binding.mercedes.setOnClickListener {
-            car = "Mercedes  GLE"
+        binding.comfortLayout.setOnClickListener {
+            car = "Комфорт"
         }
-        binding.bmw.setOnClickListener {
-            car = "BMW 840i"
-        }
-        binding.audi.setOnClickListener {
-            car = "Audi R8"
+        binding.kidsLayout.setOnClickListener {
+            car = "Kids"
         }
 
 
-        binding.chooseBtn.setOnClickListener {
+        binding.orderTaxiBtn.setOnClickListener {
             model.setStartPoint(binding.fromRouteInput.text.toString())
             model.setEndPoint(binding.toRouteInput.text.toString())
             model.setCar(car)
