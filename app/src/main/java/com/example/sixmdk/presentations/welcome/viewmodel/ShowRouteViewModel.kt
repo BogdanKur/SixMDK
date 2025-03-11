@@ -11,5 +11,4 @@ class ShowRouteViewModel @Inject constructor(
 ): ViewModel() {
     fun getStartPoint() = welcomeLocalDataSource.getStartPoint()
     fun getEndPoint() = welcomeLocalDataSource.getEndPoint()
-    fun getCar() = welcomeLocalDataSource.getCar()
 }

@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.cryptoproxy.coinmining.common.utils.views.doOnApplyWindowInsets
+import com.example.sixmdk.NavGraphDirections
 import com.example.sixmdk.data.registration.datasource.RegistrationLocalDataSource
 import com.example.sixmdk.data.welcome.datasource.WelcomeLocalDataSource
 import com.example.sixmdk.databinding.FragmentWelcomeBinding
@@ -48,5 +50,8 @@ class WelcomeFragment : Fragment() {
         if(model.getEndPoint() != null)
             binding.toRouteInput.text = model.getEndPoint()
 
+        binding.catchTaxiBtn.setOnClickListener {
+            findNavController().navigate(NavGraphDirections.startMainFragment())
+        }
     }
 }

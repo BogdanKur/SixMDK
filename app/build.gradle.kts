@@ -2,8 +2,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("dagger.hilt.android.plugin")
-    id("com.google.gms.google-services")
-    id("com.google.firebase.crashlytics")
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.devtools.ksp")
     id("kotlin-parcelize")
@@ -14,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.sixmdk"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -78,4 +76,5 @@ dependencies {
 
     implementation("com.tencent:mmkv:1.2.16")
     implementation("androidx.hilt:hilt-navigation-fragment:1.2.0")
+    implementation("com.yandex.android:maps.mobile:4.9.0-lite")
 }
