@@ -12,7 +12,7 @@
         android:id="@+id/welcome_title"
         android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
-        android:text="Добро пожаловать, Алина зайка!!"
+        android:text="Добро пожаловать, Алина!"
         android:textColor="@color/white"
         android:textSize="@dimen/_24sp"
         android:gravity="center"
@@ -116,8 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="@dimen/_102dp"
-        android:layout_marginHorizontal="@dimen/_95dp"
-        >
+        android:layout_marginHorizontal="@dimen/_85dp" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
