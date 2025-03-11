@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/registrationFragment">
+    app:startDestination="@id/splashScreenFragment">
 
     <fragment
         android:id="@+id/splashScreenFragment"
@@ -15,7 +15,8 @@
         app:enterAnim="@anim/fade_in"
         app:popEnterAnim="@anim/fade_in"
         app:exitAnim="@anim/fade_out"
-        app:popExitAnim="@anim/fade_out" />
+        app:popExitAnim="@anim/fade_out"
+        app:popUpToInclusive="true"/>
 
     <fragment
         android:id="@+id/registrationFragment"
@@ -26,19 +27,20 @@
         app:enterAnim="@anim/fade_in"
         app:popEnterAnim="@anim/fade_in"
         app:exitAnim="@anim/fade_out"
-        app:popExitAnim="@anim/fade_out"/>
+        app:popExitAnim="@anim/fade_out"
+        app:popUpToInclusive="true"/>
 
     <fragment
         android:id="@+id/orderTaxiFragment"
         android:name="com.example.sixmdk.presentations.main.view.OrderTaxiFragment"
         tools:layout="@layout/fragment_order_taxi"/>
-
     <action android:id="@+id/startMainFragment"
         app:destination="@id/orderTaxiFragment"
         app:enterAnim="@anim/fade_in"
         app:popEnterAnim="@anim/fade_in"
         app:exitAnim="@anim/fade_out"
-        app:popExitAnim="@anim/fade_out"/>
+        app:popExitAnim="@anim/fade_out"
+        app:popUpToInclusive="true"/>
 
     <fragment
         android:id="@+id/welcomeFragment"
@@ -49,5 +51,6 @@
         app:enterAnim="@anim/fade_in"
         app:popEnterAnim="@anim/fade_in"
         app:exitAnim="@anim/fade_out"
-        app:popExitAnim="@anim/fade_out"/>
+        app:popExitAnim="@anim/fade_out"
+        app:popUpToInclusive="true"/>
 </navigation>

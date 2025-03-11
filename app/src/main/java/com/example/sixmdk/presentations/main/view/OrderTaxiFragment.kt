@@ -20,6 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class OrderTaxiFragment : Fragment() {
     private lateinit var binding: FragmentOrderTaxiBinding
     private val model: ChooseViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
