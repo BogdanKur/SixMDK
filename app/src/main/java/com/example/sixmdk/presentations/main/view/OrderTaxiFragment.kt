@@ -14,15 +14,16 @@ import com.example.sixmdk.NavGraphDirections
 import com.example.sixmdk.databinding.FragmentOrderTaxiBinding
 import com.example.sixmdk.presentations.common.view.showErrorSnackbar
 import com.example.sixmdk.presentations.main.viewmodel.ChooseViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class OrderTaxiFragment : Fragment() {
     private lateinit var binding: FragmentOrderTaxiBinding
     private val model: ChooseViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentOrderTaxiBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -42,7 +43,7 @@ class OrderTaxiFragment : Fragment() {
                 binding.toRouteInput.text.toString() != "") {
                 model.setStartPoint(binding.fromRouteInput.text.toString())
                 model.setEndPoint(binding.toRouteInput.text.toString())
-                findNavController().navigate(NavGraphDirections.startMainFragment())
+                findNavController().navigate(NavGraphDirections.startWelcomeFragment())
             } else {
                 binding.root.showErrorSnackbar("Заполните все поля!!")
             }

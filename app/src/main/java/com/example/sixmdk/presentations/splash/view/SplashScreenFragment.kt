@@ -1,28 +1,26 @@
-package com.example.sixmdk.presentations.registration.view
+package com.example.sixmdk.presentations.splash.view
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.cryptoproxy.coinmining.common.utils.views.doOnApplyWindowInsets
 import com.example.sixmdk.NavGraphDirections
+import com.example.sixmdk.R
 import com.example.sixmdk.data.registration.datasource.RegistrationLocalDataSource
-import com.example.sixmdk.databinding.FragmentRegistrationBinding
-import com.example.sixmdk.domain.registration.model.UserModel
-import com.example.sixmdk.presentations.common.view.showErrorSnackbar
-import com.example.sixmdk.presentations.registration.viewmodel.RegistrationViewModel
+import com.example.sixmdk.databinding.FragmentSplashScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class RegistrationFragment : Fragment() {
-    private lateinit var binding: FragmentRegistrationBinding
-    private val model: RegistrationViewModel by viewModels()
+class SplashScreenFragment : Fragment() {
+    private lateinit var binding: FragmentSplashScreenBinding
 
     @Inject
     lateinit var registrationLocalDataSource: RegistrationLocalDataSource
@@ -31,7 +29,7 @@ class RegistrationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentRegistrationBinding.inflate(inflater, container,false)
+        binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -44,16 +42,9 @@ class RegistrationFragment : Fragment() {
             )
             insets
         }
-        binding.signupBtn.setOnClickListener {
-            if(binding.nameInput.text.toString() != "" &&
-                binding.surnameInput.text.toString() != "" &&
-                binding.numberInput.text.toString() != "") {
-                model.signup(binding.nameInput.text.toString())
-
-                findNavController().navigate(NavGraphDirections.startWelcomeFragment())
-            } else {
-                binding.root.showErrorSnackbar("Введите все поля!!!")
-            }
-        }
+        Handler(Looper.getMainLooper()).postDelayed( {
+            if(registrationLocalDataSource.isAuth()) findNavController().navigate(NavGraphDirections.startWelcomeFragment())
+            else findNavController().navigate(NavGraphDirections.startRegistrationFragment())
+        }, 1500)
     }
 }

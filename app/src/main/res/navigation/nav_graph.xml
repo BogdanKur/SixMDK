@@ -6,9 +6,28 @@
     app:startDestination="@id/registrationFragment">
 
     <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.sixmdk.presentations.splash.view.SplashScreenFragment"
+        tools:layout="@layout/fragment_splash_screen"/>
+    <action
+        android:id="@+id/startSplashScreenFragment"
+        app:destination="@id/splashScreenFragment"
+        app:enterAnim="@anim/fade_in"
+        app:popEnterAnim="@anim/fade_in"
+        app:exitAnim="@anim/fade_out"
+        app:popExitAnim="@anim/fade_out" />
+
+    <fragment
         android:id="@+id/registrationFragment"
         android:name="com.example.sixmdk.presentations.registration.view.RegistrationFragment"
         tools:layout="@layout/fragment_registration"/>
+    <action android:id="@+id/startRegistrationFragment"
+        app:destination="@id/registrationFragment"
+        app:enterAnim="@anim/fade_in"
+        app:popEnterAnim="@anim/fade_in"
+        app:exitAnim="@anim/fade_out"
+        app:popExitAnim="@anim/fade_out"/>
+
     <fragment
         android:id="@+id/orderTaxiFragment"
         android:name="com.example.sixmdk.presentations.main.view.OrderTaxiFragment"

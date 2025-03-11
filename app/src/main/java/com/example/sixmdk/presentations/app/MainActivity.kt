@@ -22,7 +22,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        if(registrationLocalDataSource.isAuth())  findNavController(R.id.nav_host_fragment).navigate(NavGraphDirections.startWelcomeFragment())
-
     }
 }
