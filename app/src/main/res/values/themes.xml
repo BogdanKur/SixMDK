@@ -5,5 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.SixMDK" parent="Base.Theme.SixMDK" />
+    <style name="Theme.SixMDK" parent="Base.Theme.SixMDK" >
+        <item name="fontFamily">@font/kz</item>
+    </style>
 </resources>

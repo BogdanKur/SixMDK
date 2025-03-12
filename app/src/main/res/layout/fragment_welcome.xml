@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:text="@string/call_taxi"
             android:textColor="@color/white"
-            android:textSize="@dimen/_21sp"
+            android:textSize="@dimen/_15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
